@@ -1,0 +1,32 @@
+{% extends "recipe/base.html" %}
+{% block content %}
+<div class="container">
+    <form class="col-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h2>Register</h2>
+          {% if messages %}
+            <div class="alert alert-primary" role="alert">
+              {% for message in messages %}
+              {{ message }}
+              {% endfor %}
+            </div>
+          {% endif %}
+    <hr>
+  <form>
+    <div class="mb-3">
+      <label for="eusername" class="form-label">User Name</label>
+      <input type="text" class="form-control" name = "user_name">
+      <label for="exampleInputEmail" class="form-label">Email</label>
+      <input type="text" class="form-control" name = "email">
+      <div id="emailHelp" class="form-text">Provide your email</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" name = "password" id="exampleInputPassword1">
+    </div>
+    <button type="submit" class="mb-3 btn btn-primary">Register</button>
+    <p>Already have an account?<a href = '/login/'> Sign Up Here </a> </p>
+  </form>   
+</div>
+
+{% endblock content%}

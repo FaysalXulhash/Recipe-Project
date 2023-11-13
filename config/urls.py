@@ -18,10 +18,15 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-
+from users.views import register, user_login, success, user_logout, profile
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('recipe.urls')),
+    path('register/', register, name='user-register'),
+    path('login/', user_login, name='user-login'),
+    path('sucess/',success, name='user-register-success'),
+    path('logout/', user_logout, name='user-logout'),
+    path('profile/', profile, name='user-profile'),
 ]
 
 if settings.DEBUG:

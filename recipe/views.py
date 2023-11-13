@@ -1,13 +1,11 @@
 from django.shortcuts import render, redirect
 from .models import Recipe
-
-
-def register(request):
-    return render(request, 'recipe/base.html')
+from django.contrib.auth.decorators import login_required
 
 def about(request):
     return render(request, 'recipe/about.html')
 
+@login_required
 def recipe (request):
     if request.method == 'POST':
         data = request.POST

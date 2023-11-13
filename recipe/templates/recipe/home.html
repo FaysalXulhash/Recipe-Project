@@ -2,14 +2,13 @@
 {% block content %}
     {% for recipe in recipes %}
         <article class="media content-section"> 
-            <img class="rounded circle rounded article-img" src = "/media/{{ recipe.recipe_image }}" style = "height: 200px"; "width: 300px">   
+            <img class="rounded circle rounded article-img" src = "/media/{{ recipe.recipe_image }}">   
             <div class="media-body">
             <div class="article-metadata">
                 <a class="mr-2" href="#">{{ recipe.recipe_name }}</a>
             </div>
             <p class="article-content">{{ recipe.recipe_description }}</p>
             </div>
-    
         </article>
     {%  endfor  %}
 {% endblock content%}
